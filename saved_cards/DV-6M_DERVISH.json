@@ -1,5 +1,5 @@
 {
-    "title": {
+    "model": {
         "pos": [
             80,
             40
@@ -99,21 +99,37 @@
         "text": "30"
     },
     "Armor": {
-        "count": 11,
+        "count": 19,
         "pos": [
-            190,
+            180,
             945
         ],
         "size": 60,
-        "spacing": 61
+        "spacing": 61,
+        "per_row": 13,
+        "row_gap": 5
     },
     "Structure": {
-        "count": 11,
+        "count": 22,
         "pos": [
-            185,
+            180,
             1095
         ],
         "size": 60,
-        "spacing": 61
+        "spacing": 61,
+        "per_row": 13,
+        "row_gap": 5
+    },
+    "MechImage": {
+        "path": "assets\\mech_pics\\dervish.png",
+        "pos": [
+            1280,
+            110
+        ],
+        "size": [
+            667,
+            890
+        ],
+        "aspect_ratio": 0.75
     }
 }

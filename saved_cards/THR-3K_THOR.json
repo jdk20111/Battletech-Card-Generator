@@ -1,0 +1,135 @@
+{
+    "model": {
+        "pos": [
+            80,
+            40
+        ],
+        "size": 120,
+        "fill": "#efe31c",
+        "outline": "#930000",
+        "outline_width": 6,
+        "text": "THR-3K"
+    },
+    "name": {
+        "pos": [
+            80,
+            145
+        ],
+        "size": 160,
+        "fill": "#930000",
+        "outline": "#efe31c",
+        "outline_width": 6,
+        "text": "THOR"
+    },
+    "MV": {
+        "pos": [
+            1020,
+            480
+        ],
+        "size": 120,
+        "fill": "#930000",
+        "outline": "",
+        "outline_width": 4,
+        "text": "6J"
+    },
+    "SZ": {
+        "pos": [
+            260,
+            480
+        ],
+        "size": 120,
+        "fill": "#930000",
+        "outline": "",
+        "outline_width": 4,
+        "text": "3"
+    },
+    "TMM": {
+        "pos": [
+            670,
+            480
+        ],
+        "size": 120,
+        "fill": "#930000",
+        "outline": "",
+        "outline_width": 4,
+        "text": "2"
+    },
+    "short": {
+        "pos": [
+            305,
+            740
+        ],
+        "size": 120,
+        "fill": "#930000",
+        "outline": "",
+        "outline_width": 4,
+        "text": "3"
+    },
+    "medium": {
+        "pos": [
+            625,
+            740
+        ],
+        "size": 120,
+        "fill": "#930000",
+        "outline": "",
+        "outline_width": 4,
+        "text": "3"
+    },
+    "long": {
+        "pos": [
+            950,
+            740
+        ],
+        "size": 120,
+        "fill": "#930000",
+        "outline": "",
+        "outline_width": 4,
+        "text": "3"
+    },
+    "PV": {
+        "pos": [
+            1785,
+            10
+        ],
+        "size": 140,
+        "fill": "#930000",
+        "outline": "#efe31c",
+        "outline_width": 4,
+        "text": "47"
+    },
+    "Armor": {
+        "count": 9,
+        "pos": [
+            180,
+            945
+        ],
+        "size": 60,
+        "spacing": 61,
+        "per_row": 13,
+        "row_gap": 5
+    },
+    "Structure": {
+        "count": 8,
+        "pos": [
+            180,
+            1095
+        ],
+        "size": 60,
+        "spacing": 61,
+        "per_row": 13,
+        "row_gap": 5
+    },
+    "MechImage": {
+        "path": "assets\\mech_pics\\thor.png",
+        "pos": [
+            1280,
+            110
+        ],
+        "size": [
+            666,
+            888
+        ],
+        "aspect_ratio": 0.75
+    }
+}
