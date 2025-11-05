@@ -1,0 +1,119 @@
+{
+    "title": {
+        "pos": [
+            80,
+            40
+        ],
+        "size": 120,
+        "fill": "#efe31c",
+        "outline": "#930000",
+        "outline_width": 6,
+        "text": "DV-6M"
+    },
+    "name": {
+        "pos": [
+            80,
+            145
+        ],
+        "size": 180,
+        "fill": "#930000",
+        "outline": "#efe31c",
+        "outline_width": 6,
+        "text": "DERVISH"
+    },
+    "MV": {
+        "pos": [
+            1020,
+            480
+        ],
+        "size": 120,
+        "fill": "#000000",
+        "outline": "#ffffff",
+        "outline_width": 4,
+        "text": "2J"
+    },
+    "SZ": {
+        "pos": [
+            260,
+            480
+        ],
+        "size": 120,
+        "fill": "#000000",
+        "outline": "#ffffff",
+        "outline_width": 4,
+        "text": "2"
+    },
+    "TMM": {
+        "pos": [
+            670,
+            480
+        ],
+        "size": 120,
+        "fill": "#000000",
+        "outline": "#ffffff",
+        "outline_width": 4,
+        "text": "2"
+    },
+    "short": {
+        "pos": [
+            305,
+            740
+        ],
+        "size": 120,
+        "fill": "#000000",
+        "outline": "#ffffff",
+        "outline_width": 4,
+        "text": "1"
+    },
+    "medium": {
+        "pos": [
+            625,
+            740
+        ],
+        "size": 120,
+        "fill": "#000000",
+        "outline": "#ffffff",
+        "outline_width": 4,
+        "text": "2"
+    },
+    "long": {
+        "pos": [
+            950,
+            740
+        ],
+        "size": 120,
+        "fill": "#000000",
+        "outline": "#ffffff",
+        "outline_width": 4,
+        "text": "3"
+    },
+    "PV": {
+        "pos": [
+            1785,
+            10
+        ],
+        "size": 140,
+        "fill": "#930000",
+        "outline": "#efe31c",
+        "outline_width": 4,
+        "text": "30"
+    },
+    "Armor": {
+        "count": 11,
+        "pos": [
+            190,
+            945
+        ],
+        "size": 60,
+        "spacing": 61
+    },
+    "Structure": {
+        "count": 11,
+        "pos": [
+            185,
+            1095
+        ],
+        "size": 60,
+        "spacing": 61
+    }
+}
