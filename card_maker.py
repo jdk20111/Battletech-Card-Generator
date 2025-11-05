@@ -167,16 +167,32 @@ root=tk.Tk(); root.title("Battletech Card Generator")
 main=tk.Frame(root); main.pack(fill=tk.BOTH,expand=True)
 left=tk.Frame(main); left.pack(side=tk.LEFT,fill=tk.Y,padx=10,pady=10)
 
-tk.Label(left,text="Text Fields",font=("Arial",10,"bold")).pack(anchor="w",pady=4)
+tk.Label(left,text="Stats:",font=("Arial",10,"bold")).pack(anchor="w",pady=4)
 vars_map={k:tk.StringVar() for k in TEXT_ELEMENTS}
-for lbl,var in vars_map.items():
-    f=tk.Frame(left); f.pack(anchor="w",pady=2)
-    tk.Label(f,text=lbl,width=8).pack(side=tk.LEFT)
-    if lbl in ("Armor","Structure"):
+
+# Display labels in proper case (with special cases)
+display_labels={
+    "title":"Title","name":"Name","MV":"MV","SZ":"Size","TMM":"TMM",
+    "short":"Short","medium":"Medium","long":"Long","PV":"PV",
+    "Armor":"Armor","Structure":"Structure"
+}
+
+# Arrange fields in two columns
+fields_frame=tk.Frame(left); fields_frame.pack(anchor="w",fill=tk.X)
+keys=list(TEXT_ELEMENTS.keys())
+numeric_fields={"MV","SZ","TMM","short","medium","long","PV"}
+for i,lbl in enumerate(keys):
+    f=tk.Frame(fields_frame)
+    r=i//2; c=i%2
+    f.grid(row=r,column=c,sticky="w",padx=5,pady=2)
+    tk.Label(f,text=display_labels.get(lbl,lbl),width=8).pack(side=tk.LEFT)
+    var=vars_map[lbl]
+    if lbl in ("Armor","Structure") or lbl in numeric_fields:
         spin=Spinbox(f,from_=0,to=50,width=5,textvariable=var,command=draw_preview)
         spin.pack(side=tk.LEFT)
     else:
-        e=tk.Entry(f,textvariable=var,width=25); e.pack(side=tk.LEFT)
+        e=tk.Entry(f,textvariable=var,width=14)
+        e.pack(side=tk.LEFT)
     var.set(str(TEXT_ELEMENTS[lbl].get("text","")) if lbl not in ("Armor","Structure") else str(TEXT_ELEMENTS[lbl]["count"]))
     var.trace_add("write",lambda *_,:draw_preview())
 
@@ -184,7 +200,7 @@ for lbl,var in vars_map.items():
 tk.Label(left,text="\nAppearance",font=("Arial",10,"bold")).pack(anchor="w")
 for k in [x for x in TEXT_ELEMENTS if x not in ("Armor","Structure")]:
     d=TEXT_ELEMENTS[k]; f=tk.Frame(left); f.pack(anchor="w",pady=3)
-    tk.Label(f,text=k,width=7).pack(side=tk.LEFT)
+    tk.Label(f,text=display_labels.get(k,k),width=7).pack(side=tk.LEFT)
     for sym,dx,dy in [("←",-NUDGE_STEP,0),("↑",0,-NUDGE_STEP),("↓",0,NUDGE_STEP),("→",NUDGE_STEP,0)]:
         tk.Button(f,text=sym,width=2,command=lambda key=k,x=dx,y=dy:nudge_text(key,x,y)).pack(side=tk.LEFT)
     # X/Y
