@@ -7,7 +7,7 @@ import os, json
 # --- Constants ---
 OUTPUT_SIZE = (2100, 1500)  # 7×5 in @300 DPI
 PREVIEW_SCALE = 0.3
-DEFAULT_BG = r"G:\My Drive\Battletech\Battletech Card Generator\Battletech Card Blank 11-1-25 v1.png"
+DEFAULT_BG = os.path.join("assets", "Battletech Card Blank 11-1-25 v1.png")
 SAVE_DIR = "saved_cards"
 ASSETS_DIR = "assets"
 ARMOR_DOT = os.path.join(ASSETS_DIR, "armor_dot.png")
@@ -36,10 +36,17 @@ dot_pos_entries, dot_size_vars, dot_spacing_vars = {}, {}, {}
 
 # --- Font loader ---
 def load_font(size):
-    try:
-        return ImageFont.truetype(r"C:\Users\Jonathan\AppData\Local\Microsoft\Windows\Fonts\STEINER.OTF", size)
-    except Exception:
-        return ImageFont.truetype("arialbd.ttf", size)
+    candidates = [
+        os.path.join("fonts", "Steiner.otf"),
+        r"C:\\Users\\Jonathan\\AppData\\Local\\Microsoft\\Windows\\Fonts\\STEINER.OTF",
+        "arialbd.ttf",
+    ]
+    for p in candidates:
+        try:
+            return ImageFont.truetype(p, size)
+        except Exception:
+            continue
+    return ImageFont.load_default()
 
 # --- Draw preview ---
 def draw_preview():
